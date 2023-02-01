@@ -1,0 +1,11 @@
+
+.vistas{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-height: 79vh;
+    background-color: rgb(230, 229, 229);
+    width: 100%;
+}
+
