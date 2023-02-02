@@ -1,0 +1,20 @@
+
+//PRODUCTOS
+
+nombre tal,
+id: 
+marca: tal,
+descriocion:
+precio: tal,
+stock: tal,
+catageoriaId: tal
+
+//CTEGORIAS
+id, 
+nombre
+
+//VENTAS
+productoId, precio, cantidad, ventaId, 
+
+//CLIENTES
+nombre, correo, id, credito, compras, rol
