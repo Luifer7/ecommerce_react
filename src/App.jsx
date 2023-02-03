@@ -1,6 +1,7 @@
+import { createRef } from "react";
 import {
   createBrowserRouter,
-  RouterProvider,
+  RouterProvider
 } from "react-router-dom";
 import Home from "./routes/Home";
 import Admin from "./routes/Admin";
@@ -19,14 +20,14 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home/>,
+      element: <Home/>
     },
     {
       path: "/admin",
-      element: <Admin/>,
+      element: <Admin/>, 
       children: [
         {
-          path: '/admin/dashboard', element: <Dashboard/>,
+          path: '/admin/dashboard', element: <Dashboard/>, nodeRef: createRef()
         },
         {
           path: '/admin/categorias', element: <Categorias/>,
@@ -53,6 +54,7 @@ function App() {
     }
   ])
 
+  
   return (
 
       <div className="content">

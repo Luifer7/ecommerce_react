@@ -9,11 +9,12 @@ let activeStyle = {
   color: '#0275d8'
 }
 
-    return ( 
+return ( 
         <>
         <div className="d-flex flex-column flex-shrink-0 p-3 bg-light" 
           style={{width: '210px', height: '100vh'}}>
 
+          { /**DASHBOARD ADMIN */ }
           <div  className="text-center">
           <NavLink to={'/admin/dashboard'} style={{textDecoration: 'none'}} >
           <span className="fs-4 fw-bold text-primary text-uppercase"
@@ -23,12 +24,14 @@ let activeStyle = {
           </NavLink>
           </div>
           <hr/>
-
-          <ul className="d-flex gap-3 mt-2 flex-column mb-auto" style={{listStyle: 'none'}}>
+            
+            { /**LINKS RUTAS ADMIN */ }
+          <div className="d-flex gap-3 mt-2 flex-column mb-auto" 
+              style={{listStyle: 'none'}}>
 
               <li>
                 <NavLink 
-                className="nav-link active fw-bold"
+                className="nav-link active fw-bold w-100"
                 to={'/admin/categorias'}
                 style={({ isActive }) =>
                 isActive ? activeStyle : undefined}
@@ -75,14 +78,28 @@ let activeStyle = {
               <strong>Ventas</strong>
               </NavLink>
               </li>
+
+              <li>
+              <NavLink 
+              className="nav-link active fw-bold"
+              to={'/admin/politicas'}
+              style={({ isActive }) =>
+              isActive ? activeStyle : undefined}
+              >
+              <i className="bi bi-file-earmark-text m-1"></i>
+              <strong>Politicas</strong>
+              </NavLink>
+              </li>
         
-          </ul>
+          </div>
           <hr/>
           
+          { /**LINKS RUTA CONFIGURACION, PERFIL Y CERRAR */ }
           <div className="dropdown"  style={{curso: 'pointer'}}>
           <a  className="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
                   id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2"/>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6fhtU5sGYJUNXDTvAwle4LAyKAacC_SdsQOVj-LzxGA&s"
+               alt="" width="32" height="32" className="rounded-circle me-2"/>
               <strong>usuario</strong>
           </a>
           <ul className="dropdown-menu text-medium shadow" aria-labelledby="dropdownUser2">
