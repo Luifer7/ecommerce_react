@@ -3,7 +3,7 @@
 const Categorias = () => {
     return ( 
         <>
-        <h1>CATEGORIAS</h1>
+        <h1 className="text-dark" >CATEGORIAS</h1>
         </>
      )
 }

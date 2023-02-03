@@ -2,7 +2,7 @@
 const Productos = () => {
     return ( 
         <>
-        <h1>PRODUCTOS</h1>
+        <h1 className="text-dark" >PRODUCTOS</h1>
         </>
      )
 }
