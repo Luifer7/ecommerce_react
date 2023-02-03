@@ -2,9 +2,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Header from "./components/Header";
 import Admin from "./routes/Admin";
 import Home from "./routes/Home";
+import Productos from "./admincomponents/Productos"
+import Categorias from "./admincomponents/Categorias"
 import './styles/app.css'
 
 function App() {
@@ -17,6 +18,14 @@ function App() {
     {
       path: "/admin",
       element: <Admin/>,
+      children: [
+        {
+          path: '/admin/categorias', element: <Productos/>
+        },
+        {
+          path: '/admin/productos', element: <Categorias/>
+        }
+      ]
     }
   ])
 
