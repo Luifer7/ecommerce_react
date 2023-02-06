@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react"
 import Cards from "./dashboard/Cards"
+import Documentacion from "./dashboard/Documentacion"
 
 const Dashboard = () => {
 
@@ -35,7 +36,7 @@ return (
                         <h5 className="m-0" >a tu panel de administración.</h5>
                         <p className="mt-2" >
                             <i>En este panel encontraras documentacion  clara <br />
-                                de como administrar nuestro sistema
+                                de como utilizar el sistema
                                 para que <br /> gestiones tu negocio facilmente.
                             </i>
                         </p>
@@ -62,31 +63,10 @@ return (
             </div>
 
             {/** Documentacion en desarrollo */}
-            <div className="mt-3 px-2" >
-            <h1>Documentacion</h1>
-            <p className="text-dark fw-bold" >
-                <i>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde dolorum, 
-                nobis suscipit porro sapiente ex maiores earum molestiae, a voluptatem 
-                assumenda reprehenderit non optio accusamus! Fugit officiis veniam consequatur 
-                atque magni dolores, aliquam molestiae vero nam neque quas, voluptate reprehenderit odio, 
-                suscipit itaque fugiat. Nulla dolore consectetur eos, expedita beatae voluptas labore
-                dicta id amet ipsum harum quaerat aliquid recusandae tempore hic libero perspiciatis 
-                eius doloremque repudiandae! Nesciunt itaque corporis eius officia, assumenda velit. 
-                Voluptates unde eligendi amet totam nesciunt illum et, quidem tenetur hic explicabo 
-                perferendis sunt debitis! Veritatis dolores minima perspiciatis eum aspernatur consequuntur
-                autem corrupti ut minus odit doloremque, sint earum in reprehenderit nemo totam dolore porro
-                pariatur repellendus iste assumenda animi. Eaque reprehenderit animi ad tenetur autem error 
-                nam nisi quasi quibusdam commodi! Exercitationem quas quisquam quaerat cupiditate numquam
-                necessitatibus ea earum, illum saepe blanditiis expedita officia delectus ducimus nesciunt
-                omnis dolores accusamus fugiat aut atque, nostrum enim! Labore neque sequi quo illo minus
-                doloribus corporis? Laborum, quis! Incidunt exercitationem nihil architecto nesciunt quo
-                neque, obcaecati officia? Ut sapiente quia dolor ad nobis, blanditiis veniam id eius
-                nihil vitae est. Excepturi non, culpa sapiente quos quam ipsum eum porro labore. 
-                Explicabo tenetur nemo ipsam minus iste?
-                </i>
-            </p>
+            <div className="mt-5 px-2" >
+            <Documentacion/>
             </div>
+            
 
         </div>
         </>
