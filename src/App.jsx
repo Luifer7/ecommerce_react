@@ -31,7 +31,7 @@ function App() {
 
   return (
 
-      <div className="content">
+      <div>
 
           {/* Header component esta en la vista*/}
           

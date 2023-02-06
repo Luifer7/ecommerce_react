@@ -2,14 +2,10 @@ import '../styles/app.css'
 
 const Header = () => {
     return ( 
-
-        <>
-         <div className='header-component'>
-            <h3 className="text-white text-center">Ecommerce React HEADER</h3>
-          </div>
-        </>
-
+          <header>
+            <h1> El Comercio</h1>
+          </header>
      )
 }
  
-export default Header
+export default Header;
