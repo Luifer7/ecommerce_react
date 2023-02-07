@@ -6,6 +6,16 @@
     flex-direction: column;
     min-height: 100vh;
 } */
+/* .header-component{
+    height: 20vh;
+    min-height: 20vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.856);
+    display: flex; align-items: center; justify-content: center;
+}
+
+ */
+
 html {
     height: 100%;
 }
@@ -27,12 +37,4 @@ h1 {
     color: #fff;
     
 }
-/* .header-component{
-    height: 20vh;
-    min-height: 20vh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.856);
-    display: flex; align-items: center; justify-content: center;
-}
 
- */
