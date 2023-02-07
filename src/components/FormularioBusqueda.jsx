@@ -4,11 +4,11 @@ const FormularioBusqueda = () => {
         <form>
             <div className="row">
                 <div className="form-group col-md-6 mt-1">
-                    <input type="text" className="form-control" placeholder="Busca un Articulo" />
+                    <input type="text" className="form-control" placeholder="Busca por Articulo o por Categoría" />
                 </div>    
                 <div className="form-group col-md-1 mt-1">
                     <input 
-                    type="submit" className="btn btn-danger  btn-block"
+                    type="submit" className="btn btn-danger btn-block"
                     value='Buscar'
                      />
                 </div>

@@ -10,23 +10,20 @@ const Home  = () => {
         <Fragment>
             <div className="jumbotron container__Header">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-md-8">
-                            <Header/>
-                        </div>
-                        <div className="col-md-2">
+                    <div className="row mb-4">
+                        <div className="d-flex justify-content-end col-md-4 order-md-last">
                             <Login/>                            
                         </div>
+                        <div className="col-md-8 pt-md-3">
+                            <Header/>
+                        </div>                       
                     </div>
                     <FormularioBusqueda/>
                 </div>
             </div>
            <div className="vistas">
                <h1 className="text-dark">Home</h1>
-               <h1 className="text-dark">Home</h1>
-               <h1 className="text-dark">Home</h1>
-               <h1 className="text-dark">Home</h1>
-               <h1 className="text-dark">Home</h1>
+
            </div>
            <Footer/>
         

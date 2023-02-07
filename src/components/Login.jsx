@@ -3,11 +3,12 @@ import '../styles/app.css'
 
 const Login = () => {
     return ( 
-      <nav className="navbar navbar-expand-md">
-        <div className="collapse navbar-collapse login__div" >
+      <nav className="navbar navbar-expand pb-3">
+        <div className="collapse navbar-collapse" >
           <div className="navbar-nav">
-            <a className="nav-link active" href="#">sign in </a>            
-            <a className="nav-link active" href="#">Log in </a>
+            <a className="nav-link text-white" href="#">Sign in </a>            
+            <a className="nav-link text-white" href="#">Log in </a>
+            <a className="nav-link text-white" href="#"><i className="bi bi-cart4">Carrito</i></a>
           </div>
         </div>
       </nav>
