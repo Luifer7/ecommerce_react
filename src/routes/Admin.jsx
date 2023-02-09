@@ -1,23 +1,20 @@
-import { useAdmin } from "../adminhooks/useAdmin";
 import AdminSidebar from "../admincomponents/AdminSidebar";
 import { Outlet, useLocation } from "react-router-dom";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import "../styles/admin.css" 
 import { useRef } from "react";
 
-const Admin = () => {
+const Admin = ({miLista, resuelta}) => {
 
 const location = useLocation()
-const { data } = useAdmin()
-
 const nodeRef = useRef(null)
 
 return ( 
 
         
         <div className="vistas-admin d-flex justify-content-start w-100">
-
-        <AdminSidebar/>
+                
+        <AdminSidebar miLista={miLista} resuelta={resuelta} />
 
         <SwitchTransition>
         <CSSTransition

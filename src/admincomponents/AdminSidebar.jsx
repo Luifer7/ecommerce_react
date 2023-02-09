@@ -1,7 +1,7 @@
-
 import { NavLink } from "react-router-dom"
+import Spinner from "./dashboard/Spinner"
 
-const AdminHeader = () => {
+const AdminSidebar = ({miLista, resuelta}) => {
 
 let activeStyle = {
   transition: '.6s ease all', 
@@ -26,71 +26,27 @@ return (
           <hr/>
             
             { /**LINKS RUTAS ADMIN */ }
-          <div className="d-flex gap-3 mt-2 flex-column mb-auto" 
-              style={{listStyle: 'none'}}>
-
-              <li>
-                <NavLink 
-                className="nav-link active fw-bold w-100"
-                to={'/admin/categorias'}
-                style={({ isActive }) =>
-                isActive ? activeStyle : undefined}
-                >
-                <i className="bi bi-tags m-1"></i>
-                <strong>Categorias</strong>
-                </NavLink>
-              </li>
-
-              <li>
-                <NavLink 
+          <div className="d-flex gap-3 mt-2 flex-column mb-auto py-2 px-1" 
+              style={{listStyle: 'none', maxHeight: '350px', overflow: 'auto'}}>
+            
+              {/**Agregamos las rutas segun los modulos dinamicamente */}
+              {
+               resuelta ?
+               miLista.map((r, i) => (
+                <NavLink
+                key={i}
                 className="nav-link active fw-bold"
-                to={'/admin/productos'}
+                to={`/admin/${r.value}`}
                 style={({ isActive }) =>
                 isActive ? activeStyle : undefined}
                 >
-                <i className="bi bi-basket3 m-1"></i>
-                <strong>Productos</strong>
+                   <i className={`${r.icon} m-1`}></i>
+                   <strong>{r.value}</strong>
                 </NavLink>
-              </li>
-
-              <li>
-          
-                <NavLink 
-                className="nav-link active fw-bold"
-                to={'/admin/usuarios'}
-                style={({ isActive }) =>
-                isActive ? activeStyle : undefined}
-                >
-                <i className="bi bi-person-circle m-1"></i>
-                <strong>Usuarios</strong>
-                </NavLink>
-
-              </li>
-
-              <li>
-              <NavLink 
-              className="nav-link active fw-bold"
-              to={'/admin/ventas'}
-              style={({ isActive }) =>
-              isActive ? activeStyle : undefined}
-              >
-              <i className="bi bi-cash m-1"></i>
-              <strong>Ventas</strong>
-              </NavLink>
-              </li>
-
-              <li>
-              <NavLink 
-              className="nav-link active fw-bold"
-              to={'/admin/politicas'}
-              style={({ isActive }) =>
-              isActive ? activeStyle : undefined}
-              >
-              <i className="bi bi-file-earmark-text m-1"></i>
-              <strong>Politicas</strong>
-              </NavLink>
-              </li>
-        
+               ))
+               : <div className="w-100 p-2 text-center"><Spinner/></div>
+              }
+            
           </div>
           <hr/>
           
@@ -103,6 +59,18 @@ return (
               <strong>usuario</strong>
           </a>
           <ul className="dropdown-menu text-medium shadow" aria-labelledby="dropdownUser2">
+
+          <li>
+              <NavLink 
+              className="nav-link active fw-bold"
+              to={'/admin/politicas'}
+              style={({ isActive }) =>
+              isActive ? activeStyle : undefined}
+              >
+              <i className="bi bi-file-earmark-text m-1"></i>
+              <strong>Politicas</strong>
+              </NavLink>
+              </li>
               
               <li className="mb-2" >
               <NavLink 
@@ -138,4 +106,4 @@ return (
      )
 }
  
-export default AdminHeader
+export default AdminSidebar

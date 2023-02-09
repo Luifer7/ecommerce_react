@@ -1,31 +1,15 @@
 
-import { useEffect, useState } from "react"
-import Cards from "./dashboard/Cards"
+import { NavLink } from "react-router-dom"
 import Documentacion from "./dashboard/Documentacion"
 
-const Dashboard = () => {
-
-const [ informacion, setinformacion ] = useState([])
-
-useEffect(()=> {
-
-const datos = [
-    { id: 1, nombre: 'Categorias', descripcion: 'Añade categorias para identificar tus productos.'}, 
-    { id: 2, nombre: 'Productos', descripcion: 'Añade productos y personalizalos.'},
-    { id: 3, nombre: 'Usuarios', descripcion: 'Vsualiza datos sobre tus clientes'}, 
-    { id: 4, nombre: 'Ventas', descripcion: 'Gestiona tu hisorial de ventas.'},
-]
-
-setinformacion(datos)
-
-}, [])
+const Dashboard = ({miLista, resuelta}) => {
 
 return ( 
         <>
         <div className="px-3 mt-2" >
             
          
-            {/**PRESENTACION CARDA */}
+            {/**PRESENTACION CARTA */}
             <div className="col-12 rounded  mt-3 p-3 d-flex justify-content-between flex-wrap" 
             style={{minHeight: '150px', wordBreak: 'break-all', 
             boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px'
@@ -48,23 +32,24 @@ return (
                 </div>
             
             </div>
-            
-            {/**SECCIONES CARDS */}
-            <div className="w-100 mt-3 row m-auto" >
-                {
-                    informacion.map((info) => (
-                        <Cards 
-                        info={info}
-                        key={info.id}
-                        />
-                    ))
-                }
-               
-            </div>
 
+            {/**CREAR NUEVO MODULO */}
+            <div className="w-100 mt-2 rounded p-3" >
+                <NavLink
+                to={'/admin/createmodulo'} className="text-decoration-none"
+                >
+                <button className="button-30"
+                >Crear modulo
+                </button>
+                </NavLink>
+            </div>
+            
             {/** Documentacion en desarrollo */}
-            <div className="mt-5 px-2" >
-            <Documentacion/>
+            <div className="mt-3 px-2" >
+            <Documentacion
+            miLista={miLista}
+            resuelta={resuelta}
+            />
             </div>
             
 

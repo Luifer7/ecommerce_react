@@ -1,4 +1,3 @@
-import { createRef } from "react";
 import {
   createBrowserRouter,
   RouterProvider
@@ -11,9 +10,13 @@ import Configuracion from "./admincomponents/Configuracion"
 import Politicas from "./admincomponents/Politicas"
 import './styles/app.css'
 import Modulo from "./admincomponents/Modulo";
+import CreateModulo from "./admincomponents/dashboard/CreateModulo";
+import Login from "./routes/Login";
+import { useLista } from "./adminhooks/useLista";
 
 function App() {
 
+  const {miLista, resuelta} = useLista()
 
   const router = createBrowserRouter([
     {
@@ -22,10 +25,13 @@ function App() {
     },
     {
       path: "/admin",
-      element: <Admin/>, 
+      element: <Admin miLista={miLista} resuelta={resuelta} />, 
       children: [
         {
-          path: '/admin/dashboard', element: <Dashboard/>,
+          path: '/admin/dashboard', 
+          element: <Dashboard 
+          miLista={miLista} 
+          resuelta={resuelta} />,
         },
         {
           path: '/admin/:modulo', element: <Modulo/>,
@@ -39,7 +45,14 @@ function App() {
         {
           path: '/admin/configuracion', element: <Configuracion/> ,
         },
+        {
+          path: '/admin/createmodulo', element: <CreateModulo  />,
+        },
       ]
+    },
+    {
+      path: "/login",
+      element: <Login/> ,
     }
   ])
 
