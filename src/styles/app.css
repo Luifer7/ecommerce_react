@@ -1,18 +1,28 @@
 
-.content {
-    display: flex; 
-    align-items: center;
-    justify-content: start;
-    flex-direction: column;
-    min-height: 100vh;
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100%;
+}
+h1 {
+    
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    
+}
+.container__Header{
+    background-color: #3D4C53 ;
+    padding-bottom: 2rem;
 }
 
-.header-component{
-    height: 20vh;
-    min-height: 20vh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.856);
-    display: flex; align-items: center; justify-content: center;
+a {
+    /* text-transform: uppercase; */
+    
+    font-weight: 300;
+    font-size: 5rem;
 }
-
-
