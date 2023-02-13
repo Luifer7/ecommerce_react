@@ -1,0 +1,87 @@
+  
+    .my-node-enter {
+      opacity: 0;
+    }
+    .my-node-enter-active {
+      opacity: 1;
+      transition: opacity 600ms;
+    }
+  
+    .my-node-exit {
+      opacity: 0;
+      transform: scale(.9);
+    }
+    
+    .my-node-exit-active {
+      opacity: 0;
+      transform: scale(1);
+      transition: .5s ease all;
+    }
+
+    .banner-card{
+      background-image: linear-gradient(-70deg, #0275d8, transparent 60%);
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    }
+    .banner-img {
+      clip-path: polygon(31% 0, 100% 0, 100% 100%, 0 100%);
+      transition: .6s ease all;
+      cursor: pointer;
+    }
+    .banner-img:hover {
+      transform: scale(.9);
+      *clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .edit-input {
+      background-color: transparent;
+      font-weight: bold;
+      transition: .6s ease all;
+      border: none;
+    }
+    
+    .edit-input:focus {
+     transition: .6s ease all;
+     outline: none;
+    }
+
+    .edit-inputs_ {
+      cursor: pointer;
+      background-color: transparent;
+      font-weight: bold;
+      transition: .6s ease all;
+      border: none;
+    }
+    .edit-inputs_:focus{
+      transition: .6s ease all;
+      outline: none;
+      border-radius: none;
+      border-bottom: 2px solid #0275d8;
+    }
+
+  
+  /*
+  
+  .page-enter {
+    opacity: 0;
+    transform: scale(.9);
+    transition: .3s ease all;
+  }
+  
+  .page-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .page-exit {
+    opacity: 0;
+    transform: scale(.9);
+  }
+  
+  .page-exit-active {
+    opacity: 0;
+    transform: scale(1);
+    transition: .5s ease all;
+  }
+  
+*/

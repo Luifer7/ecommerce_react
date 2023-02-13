@@ -205,7 +205,7 @@
   will-change: box-shadow,transform;
   font-size: 18px;
   width: 100%;
-  text-shadow: 1px 0 1px rgba(0, 0, 0, 0.788);
+  text-shadow: 1px 1px 1px black;
   letter-spacing: 1px;
 }
 
@@ -222,3 +222,7 @@
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
 }
+
+
+
+

@@ -1,10 +1,15 @@
 
 
-
+// Inicaliza la appd e firebase
 import { initializeApp } from "firebase/app";
+
+//es el metodo ara autenticacion
 import { getAuth } from "firebase/auth";
+
+//es el metodo para la base de datos
 import { getFirestore } from "firebase/firestore";
 
+//credencias
 const firebaseConfig = {
   apiKey: "AIzaSyCojlVaW4jV0vCrxD-xOhkMZYkg8Wq96oo",
   authDomain: "ecommercereact-ccb1d.firebaseapp.com",
@@ -16,6 +21,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
 const auth = getAuth(app)
 const db = getFirestore(app)
 

@@ -9,10 +9,11 @@ import Perfil from "./admincomponents/Perfil"
 import Configuracion from "./admincomponents/Configuracion"
 import Politicas from "./admincomponents/Politicas"
 import './styles/app.css'
-import Modulo from "./admincomponents/Modulo";
+import Modulos from "./admincomponents/Modulos";
 import CreateModulo from "./admincomponents/dashboard/CreateModulo";
 import Login from "./routes/Login";
 import { useLista } from "./adminhooks/useLista";
+import Item from "./admincomponents/Item";
 
 function App() {
 
@@ -34,7 +35,13 @@ function App() {
           resuelta={resuelta} />,
         },
         {
-          path: '/admin/:modulo', element: <Modulo/>,
+          path: '/admin/:modulo', element: <Modulos/>,
+        },
+        {
+          path: '/admin/createmodulo', element: <CreateModulo/>,
+        },
+        {
+          path: '/admin/:modulo/:item/:id', element: <Item/>,
         },
         {
           path: '/admin/politicas', element: <Politicas/>,
@@ -44,9 +51,6 @@ function App() {
         },
         {
           path: '/admin/configuracion', element: <Configuracion/> ,
-        },
-        {
-          path: '/admin/createmodulo', element: <CreateModulo  />,
         },
       ]
     },

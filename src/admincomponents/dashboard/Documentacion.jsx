@@ -35,7 +35,7 @@ return (
                 <thead>
                     <tr className="text-center" >
                     {lista.head.map((head, i)=> (
-                        <th key={i} > {head}</th>
+                        <th key={i} > {head.nombre}</th>
                         ))
                     }
                     </tr>
