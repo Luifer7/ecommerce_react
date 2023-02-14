@@ -1,6 +1,4 @@
 
-import '../styles/app.css'
-
 const Footer = () => {
     return ( 
 
@@ -13,4 +11,4 @@ const Footer = () => {
      )
 }
  
-export default Footer
+export default Footer;

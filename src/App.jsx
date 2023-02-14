@@ -2,16 +2,16 @@ import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
-import Home from "./routes/Home";
+import Home from "./components/proyecto/Home";
+import Login from "./components/auth/Login";
+import NuevaCuenta from "./components/auth/NuevaCuenta";
 import Admin from "./routes/Admin";
 import Dashboard from "./admincomponents/Dashboard"
 import Perfil from "./admincomponents/Perfil"
 import Configuracion from "./admincomponents/Configuracion"
 import Politicas from "./admincomponents/Politicas"
-import './styles/app.css'
 import Modulo from "./admincomponents/Modulo";
 import CreateModulo from "./admincomponents/dashboard/CreateModulo";
-import Login from "./routes/Login";
 import { useLista } from "./adminhooks/useLista";
 
 function App() {
@@ -22,6 +22,14 @@ function App() {
     {
       path: "/",
       element: <Home/>
+    },
+    {
+      path: "/login",
+      element: <Login/> ,
+    },
+    {
+      path: "/nueva-cuenta",
+      element: <NuevaCuenta/> ,
     },
     {
       path: "/admin",
@@ -49,11 +57,8 @@ function App() {
           path: '/admin/createmodulo', element: <CreateModulo  />,
         },
       ]
-    },
-    {
-      path: "/login",
-      element: <Login/> ,
     }
+  
   ])
 
   
@@ -75,4 +80,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

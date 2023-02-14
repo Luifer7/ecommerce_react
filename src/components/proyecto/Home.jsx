@@ -1,7 +1,10 @@
 import { Fragment } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import '../styles/routes.css';
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
+
+import '../../styles/index.css';
+
+
 
 const Home  = () => {
     return ( 
@@ -11,10 +14,10 @@ const Home  = () => {
                     <Header/>
                 </div>
             </div>
-           <div className="vistas">
+           <div className="container main-height">
                <h1 className="text-dark">Home</h1>
-
            </div>
+           
            <Footer/>
         
         </Fragment>
