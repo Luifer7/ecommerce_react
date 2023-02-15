@@ -2,7 +2,7 @@ import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
-import Home from "./components/proyecto/Home";
+import Home from "./routes/Home";
 import Login from "./components/auth/Login";
 import NuevaCuenta from "./components/auth/NuevaCuenta";
 import Admin from "./routes/Admin";

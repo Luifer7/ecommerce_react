@@ -1,19 +1,26 @@
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+import { Fragment } from 'react';
+import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
+
+import '../styles/index.css';
+
+
 
 const Home  = () => {
     return ( 
-        <>
-            <Header/>
-           <div className="vistas">
-               <h1 className="text-dark">Home</h1>
-               <h1 className="text-dark">Home</h1>
-               <h1 className="text-dark">Home</h1>
-               <h1 className="text-dark">Home</h1>
+        <Fragment>
+            <div className="jumbotron container__Header">
+                <div className="container">
+                    <Header/>
+                </div>
+            </div>
+           <div className="container main-height">
                <h1 className="text-dark">Home</h1>
            </div>
+           
            <Footer/>
-        </>
+        
+        </Fragment>
      )
 }
  
