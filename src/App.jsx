@@ -2,16 +2,21 @@ import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
-import Home from "./routes/Home";
+import Home from "./components/proyecto/Home";
+import Login from "./components/auth/Login";
+import NuevaCuenta from "./components/auth/NuevaCuenta";
 import Admin from "./routes/Admin";
 import Dashboard from "./admincomponents/Dashboard"
 import Perfil from "./admincomponents/Perfil"
 import Configuracion from "./admincomponents/Configuracion"
 import Politicas from "./admincomponents/Politicas"
+<<<<<<< HEAD
 import './styles/app.css'
 import Modulos from "./admincomponents/Modulos";
+=======
+import Modulo from "./admincomponents/Modulo";
+>>>>>>> 9db9c8739c018d10e8d5f983275ae61d24e320db
 import CreateModulo from "./admincomponents/dashboard/CreateModulo";
-import Login from "./routes/Login";
 import { useLista } from "./adminhooks/useLista";
 import Item from "./admincomponents/Item";
 
@@ -23,6 +28,14 @@ function App() {
     {
       path: "/",
       element: <Home/>
+    },
+    {
+      path: "/login",
+      element: <Login/> ,
+    },
+    {
+      path: "/nueva-cuenta",
+      element: <NuevaCuenta/> ,
     },
     {
       path: "/admin",
@@ -53,17 +66,14 @@ function App() {
           path: '/admin/configuracion', element: <Configuracion/> ,
         },
       ]
-    },
-    {
-      path: "/login",
-      element: <Login/> ,
     }
+  
   ])
 
   
   return (
 
-      <div className="content">
+      <div>
 
           {/* Header component esta en la vista*/}
           
@@ -79,4 +89,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
