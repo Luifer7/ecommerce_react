@@ -25,6 +25,10 @@ function App() {
       element: <Home/>
     },
     {
+      path: "/login",
+      element: <Login/>,
+    },
+    {
       path: "/admin",
       element: <Admin miLista={miLista} resuelta={resuelta} />, 
       children: [
@@ -53,10 +57,6 @@ function App() {
           path: '/admin/configuracion', element: <Configuracion/> ,
         },
       ]
-    },
-    {
-      path: "/login",
-      element: <Login/> ,
     }
   ])
 

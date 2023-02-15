@@ -38,6 +38,7 @@ return (
                         <th key={i} > {head.nombre}</th>
                         ))
                     }
+                    <th>acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,9 +48,7 @@ return (
                         ))
                     }
                     <td className="d-flex gap-3 justify-content-center align-items-center" >
-                    <i className="bi bi-eye"></i>
-                    <i className="bi bi-pencil"></i>
-                    <i className="bi bi-trash" ></i>
+                    <button disabled className="btn btn-outline-info btn-sm" >detalles</button>
                     </td>
                    
                     </tr>

@@ -21,8 +21,8 @@ return (
          key={location.pathname}
          nodeRef={nodeRef}
          timeout={300}
-         classNames="page"
-        >
+         classNames="page">
+
         <div className="bg-ligth w-100 text-white oulet" ref={nodeRef}>
         <Outlet></Outlet>
         </div>
@@ -30,10 +30,8 @@ return (
         </CSSTransition>
         </SwitchTransition>
         </div>
-
-  
-
-     )
+        )
+        
 }
  
 export default Admin

@@ -5,7 +5,7 @@ import Documentacion from "./dashboard/Documentacion"
 const Dashboard = ({miLista, resuelta}) => {
 
 return ( 
-        <>
+        
         <div className="px-3 mt-2" >
             
          
@@ -54,7 +54,7 @@ return (
             
 
         </div>
-        </>
+        
      )
 }
  

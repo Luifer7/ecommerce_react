@@ -17,26 +17,24 @@ const handledSubmit = (e) => {
 
     let newData = {}
     newData = nuevoDato
-    console.log(nuevoDato)
     newData.date = Date.now()
-
-    if (nombreModulo === 'usuarios') {
-      newData.rol = 'cliente'
-      newData.usuario_compras = 0	
-      create(newData)
-    }
 
     if (nombreModulo === 'categorias') { 
       newData.categoria_productos = 0
-      create(newData)   
+      return create(newData)   
+    }
+
+    if (nombreModulo === 'usuarios') {
+      newData.rol = 'cliente'
+      create(newData)
     }
 
     if (nombreModulo === 'productos') { 
       if (!newData.producto_categoria) {
           newData.producto_categoria = 'undefined' 
-       // return create(newData)       
+          return create(newData)       
       }
-     // create(newData)
+        create(newData)
     }
    
    
@@ -67,30 +65,40 @@ return (
               <div 
               key={i} className="px-2 mb-2" >
               
-              {item.tipo === 'hidden' ? '' : <label htmlFor={item.nombre}><i>{item.nombre}</i></label> }
+              {item.tipo === 'hidden' ? '' : 
+              <label htmlFor={item.nombre}>
+                <strong>{item.nombre}</strong>
+                {item.requerido ? <i style={{fontSize: '12px'}} className='mx-2' >requerido*</i> : ''}
+              </label> }
             
-              {item.tipo === 'select' ? '' : 
+              {item.tipo === 'select' 
+              ? 
+               <select required className="form-select form-select-sm" aria-label=".form-select-sm example"
+               onChange={handledChange} name={item.nombre}>
+                 <option value="opciones">opciones</option>
+               {selectOptions.map((option, i)=> (
+                    <option required key={i} value={option.nombre}>{option.nombre}</option>
+               ))}
+               </select> 
+              
+              :  
+              <div>
               <input 
               id={item.nombre}
+              readOnly={!item.editable}
               type={item.tipo} 
               placeholder={item.nombre} 
               className='form-control form-control-sm'
               name={item.nombre}
               onChange={handledChange}
               required
-              /> 
+              pattern={item.pattern}
+              />
+              </div>
+              
               }
               
-              {item.tipo === 'select' ? 
-                <select required className="form-select form-select-sm" aria-label=".form-select-sm example"
-                onChange={handledChange} name={item.nombre}>
-                  <option value="opciones">opciones</option>
-                {selectOptions.map((option, i)=> (
-                     <option required key={i} value={option.nombre}>{option.nombre}</option>
-                ))}
-                </select> 
-                :''
-              }
+           
             </div>
 
               )) 

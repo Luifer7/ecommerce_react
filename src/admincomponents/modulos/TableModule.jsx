@@ -1,20 +1,23 @@
 import HeadTable from "./HeadTable";
-import TableData from "./TableData";
+import BodyTable from "./BodyTable";
 
-const TableModule = ({headDataModule, bodyDataModule}) => {
+const TableModule = ({headDataModule, bodyDataModule, params}) => {
     return ( 
-       <table className="table" >
-        <HeadTable headDataModule={headDataModule}/>
-        <tbody>
+
+      headDataModule[0] ?
+       <table className="table table-striped table-bordered table-sm text-center table-hover">
+
+        <HeadTable headDataModule={headDataModule} params={params} />
+       
           {
             bodyDataModule.map((item, i)=> (
-            <TableData key={i} item={item} headDataModule={headDataModule}/>
+            <BodyTable key={i} item={item} headDataModule={headDataModule}/>
             ))
-          }        
-                  
-        </tbody>
+          }               
+        
        </table>
+      : <div className="text-center text-dark h3">¡No has agregado {params.modulo}!</div>
      )
 }
  
-export default TableModule;
+export default TableModule

@@ -52,6 +52,7 @@
       border: none;
     }
     .edit-inputs_:focus{
+      cursor:text;
       transition: .6s ease all;
       outline: none;
       border-radius: none;

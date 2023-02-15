@@ -1,4 +1,12 @@
-import { addDoc, collection, doc, getDocs, query, updateDoc, where } from "firebase/firestore"
+import { 
+addDoc, 
+collection, 
+doc, 
+getDocs, 
+query, 
+updateDoc, 
+where, 
+deleteDoc } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { db } from "../../firebase"
 import { useLista } from "./useLista"
@@ -12,6 +20,7 @@ export function useCrud (location) {
 
     const [item, setItem] = useState([])
     const [checked, setChecked] = useState(true)
+    const [isResolveCrud, setIsResolveCrud] = useState(false)
 
 
    const getItem = async (location) => {
@@ -21,8 +30,10 @@ export function useCrud (location) {
         let data = []
         querySnapshot.forEach((doc) => {
         data.push({...doc.data()})
-    })
+    })  
+        setIsResolveCrud(true)
         setItem(data)
+
     }
         
    } 
@@ -50,6 +61,11 @@ export function useCrud (location) {
         })
     }
 
+    // DELETE DOCUMENTOS
+    const deleteDocument = async (idDocument) => {
+        await deleteDoc(doc(db, location.modulo, idDocument))
+    }
+
     const handleCheked = (e) => {
         setChecked(!checked)
       }
@@ -57,7 +73,7 @@ export function useCrud (location) {
       
 
     return {
-        create, showForm, handleCheked, checked, head, show, item
+        create, showForm, handleCheked, checked, head, show, item, isResolveCrud, deleteDocument
     }
 
 }
