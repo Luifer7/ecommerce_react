@@ -10,12 +10,7 @@ import Dashboard from "./admincomponents/Dashboard"
 import Perfil from "./admincomponents/Perfil"
 import Configuracion from "./admincomponents/Configuracion"
 import Politicas from "./admincomponents/Politicas"
-<<<<<<< HEAD
-import './styles/app.css'
 import Modulos from "./admincomponents/Modulos";
-=======
-import Modulo from "./admincomponents/Modulo";
->>>>>>> 9db9c8739c018d10e8d5f983275ae61d24e320db
 import CreateModulo from "./admincomponents/dashboard/CreateModulo";
 import { useLista } from "./adminhooks/useLista";
 import Item from "./admincomponents/Item";
