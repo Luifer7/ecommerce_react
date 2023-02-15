@@ -26,15 +26,11 @@ function App() {
     },
     {
       path: "/login",
-<<<<<<< HEAD
       element: <Login/> ,
     },
     {
       path: "/nueva-cuenta",
-      element: <NuevaCuenta/> ,
-=======
-      element: <Login/>,
->>>>>>> dashboard
+      element: <NuevaCuenta/>,
     },
     {
       path: "/admin",
