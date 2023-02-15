@@ -1,15 +1,15 @@
-
 import { useParams } from "react-router-dom"
 import {useAdmin} from "../adminhooks/useAdmin"
 import { useCrud } from "../adminhooks/useCrud"
 import "../styles/admin.css"
 import FormAdd from "./modulos/FormAdd"
 import TableModule from "./modulos/TableModule"
+import Spinner from "../admincomponents/dashboard/Spinner"
 
 const Modulos = () => {
 
     const params = useParams()
-    const { nombreModulo, bodyDataModule, dataCategories, headDataModule } = useAdmin(params.modulo)
+    const { nombreModulo, bodyDataModule, dataCategories, headDataModule , isResolve} = useAdmin(params.modulo)
     const {head, show, showForm} = useCrud(params)
 
     return ( 
@@ -36,13 +36,21 @@ const Modulos = () => {
             selectOptions={dataCategories}
             nombreModulo={nombreModulo}
             />
-
-            <div className="mt-2 w-100 p-3" >
-            <TableModule
-            headDataModule={headDataModule}
-            bodyDataModule={bodyDataModule}
-            />
-            </div>
+            
+            {
+                isResolve 
+                ?  
+                <div className="mt-2 w-100 p-3" >
+                <TableModule
+                headDataModule={headDataModule}
+                bodyDataModule={bodyDataModule}
+                params={params}
+                />
+                </div>
+                : 
+                <div className="mt-5 text-center"><Spinner/></div>
+            }
+           
                    
         </div>
         </>

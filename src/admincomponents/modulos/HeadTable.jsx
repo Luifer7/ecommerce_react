@@ -1,5 +1,5 @@
 
-const HeadTable = ({headDataModule}) => {
+const HeadTable = ({headDataModule, params}) => {
 
     
     return ( 
@@ -7,10 +7,12 @@ const HeadTable = ({headDataModule}) => {
         <tr>
            {
             headDataModule.map((item, i)=> (
-                item.nombre === 'acciones' ? '' 
-                : <th key={i}>{item.nombre}</th>
+               item.tipo === 'hidden' 
+               ? '' 
+               : <th key={i} className="align-end" >{item.nombre}</th>
             ))
            }
+                 <th>Acciones</th> 
         </tr>
       </thead>
      )

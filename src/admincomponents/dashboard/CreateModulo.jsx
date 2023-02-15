@@ -63,6 +63,7 @@ return (
                 <tr>
                 {preview?.head.map((head, i)=> (
                 <th key={i} > {head.nombre}</th>))}
+                <th>acciones</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -70,7 +71,7 @@ return (
                 {preview?.body.map((body, i)=> (
                 <td key={i} > {body}</td>))}
                 <td>
-                    <i>detalles</i>
+                    <button className="btn btn-outline-info btn-sm" >detalles</button>
                 </td>
                 </tr>
                 </tbody>

@@ -7,7 +7,8 @@ const SwitchEdit = ({checked, handleCheked}) => {
 
         <FormControlLabel
         label={checked ? 'Habilitar edición' : 'Deshabilitar edición'}
-        control={<Switch
+        control={
+        <Switch
         color="default"
         size="medium"
         checked={checked}
