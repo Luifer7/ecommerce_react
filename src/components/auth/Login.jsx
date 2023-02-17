@@ -34,7 +34,7 @@ const Login = () => {
     return (
         <div className="form-usuario">
             <div className="contenedor-form sombra-dark">
-                <h2>Iniciar Sesión</h2>
+                <h3 className="headingForm">Iniciar Sesión</h3>
 
                 <form 
                     onSubmit={onSubmit}

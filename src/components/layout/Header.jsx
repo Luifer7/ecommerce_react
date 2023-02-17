@@ -14,7 +14,7 @@ const Header = () => {
               </div>
               <div className="col-md-8 pt-md-3">
                 <header>
-                  <h1 className='text-center text-md-end'> El Comercio</h1>
+                  <h1 className='headingFont text-center text-md-end'> El Comercio</h1>
                 </header>
               </div>                       
           </div>
