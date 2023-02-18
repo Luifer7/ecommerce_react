@@ -6,12 +6,11 @@ const NavLogin = () => {
       <nav className="navbar navbar-expand pb-3">
         <div className="collapse navbar-collapse" >
           <div className="navbar-nav">
-            <a className="nav-link text-white fst-italic" href="#">Sign in </a>
-            {/* <a className="nav-link text-white fst-italic" href="#">Log in </a> */}
-            <Link to={'/Login'}  className="nav-link text-white fst-italic">
+            <a className="nav-link fw-bold fst-italic" href="#">Sign in </a>
+            <Link to={'/Login'}  className="nav-link fw-bold fst-italic">
               Log in
             </Link>            
-            <a className="nav-link text-white" href="#"><i className="bi bi-cart4">Carrito</i></a>
+            <a className="nav-link fw-bold" href="#"><i className="bi bi-cart4">Carrito</i></a>
           </div>
         </div>
       </nav>

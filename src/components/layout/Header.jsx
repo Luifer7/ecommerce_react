@@ -1,5 +1,4 @@
 
-import { Fragment } from 'react';
 import NavLogin from '../auth/NavLogin';
 import FormularioBusqueda from '../proyecto/FormularioBusqueda';
 
@@ -7,22 +6,23 @@ import FormularioBusqueda from '../proyecto/FormularioBusqueda';
 
 const Header = () => {
     return ( 
-        <Fragment>
-          <div className="row mb-4">
-              <div className="d-flex justify-content-end col-md-4 order-md-last">
-                  <NavLogin/>                            
-              </div>
-              <div className="col-md-8 pt-md-3">
-                <header>
-                  <h1 className='headingFont text-center text-md-end'> El Comercio</h1>
-                </header>
-              </div>                       
-          </div>
-          <FormularioBusqueda/>
-
-        </Fragment>
-      
-
+           <div className="header">
+                <div className="container">
+                    <div className="row  justify-content-end mb-4">
+                        <div className="col-md-4">
+                            <NavLogin/>                            
+                        </div>
+                    </div>
+                    <div className="min-height-250 d-flex flex-column justify-content-end">
+                      <div className="row mb-3">
+                            <header>
+                              <h1 className='headingFont text-center '> El Comercio</h1>
+                            </header>              
+                      </div>
+                      <FormularioBusqueda/>
+                    </div>
+                </div>
+            </div>
      )
 }
  

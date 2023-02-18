@@ -18,24 +18,18 @@ body {
     background-color: var(--gris);
 
 }
- /* h1,h2 { 
-    font-family: var(--headingFont);
-    font-weight: 900;
-    text-align: center;    
-}
-h1 {
-    color: var(--blanco);
-    text-transform: uppercase;
-    font-size: 2rem;
-}
-h2 {
-    font-size: 1.5rem;
-    color: var(--azulRey);
+/* utilidades */
+/* .main-height{
+    min-height: 79vh;
 } */
+.min-height-250 {
+    min-height: 250px;
+    
+}
 .headingFont {
     font-family: var(--headingFont);
     font-weight: 900;
-    color: var(--blanco);
+    color: var(--azulRey);
     text-transform: uppercase;
     font-size: 2rem;
 }
@@ -71,12 +65,15 @@ h2 {
     display: block;
     width: 100%;
 }
-.main-height{
-    min-height: 79vh;
-}
-.container__Header{
-    background-color: #3D4C53 ;
-    padding-bottom: 3rem;
+
+.header{
+    /* background-color: #3D4C53 ; */
+    background-image: url(./img/banner.jpg);
+    height: 35rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* padding-bottom: 3rem; */
 }
 .form-usuario {
     background-color: var(--verdeOliva);
