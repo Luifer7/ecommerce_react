@@ -2,7 +2,7 @@
 const FormularioBusqueda = () => {
     return(
         <form>
-            <div className="row  justify-content-center">
+            <div className="row  justify-content-md-center">
                 <div className="form-group col-md-6  mt-1">
                     <input type="text" className="form-control" placeholder="Busca por Articulo o por Categoría" />
                 </div>    

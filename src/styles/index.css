@@ -31,7 +31,7 @@ body {
     font-weight: 900;
     color: var(--azulRey);
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 .headingForm {
     font-family: var(--headingFont);

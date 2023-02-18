@@ -13,7 +13,7 @@ const Header = () => {
                             <NavLogin/>                            
                         </div>
                     </div>
-                    <div className="min-height-250 d-flex flex-column justify-content-end">
+                    <div className="min-height-250 d-flex flex-column justify-content-md-end">
                       <div className="row mb-3">
                             <header>
                               <h1 className='headingFont text-center '> El Comercio</h1>
