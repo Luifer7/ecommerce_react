@@ -19,13 +19,12 @@ body {
 
 }
 /* utilidades */
-/* .main-height{
-    min-height: 79vh;
-} */
+
 .min-height-250 {
     min-height: 250px;
     
 }
+
 .headingFont {
     font-family: var(--headingFont);
     font-weight: 900;
