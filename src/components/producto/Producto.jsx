@@ -7,9 +7,9 @@ const Producto = ({articulo}) => {
                 <img className="card-img-top" src={articulo.img} alt={articulo.nombre} />
 
                 <div className="card-body">
-                    <p class="card-text">{articulo.descripcion}</p>
+                    <p className="card-text">{articulo.descripcion}</p>
                     <div className="d-grid">
-                        <a href="#" class="btn btn-danger">Agregar al carrito</a>
+                        <a href="#" className="btn btn-danger">Agregar al carrito</a>
                     </div>
                 </div>
             </div>

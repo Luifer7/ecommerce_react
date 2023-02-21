@@ -1,12 +1,13 @@
 import { Fragment } from "react";
-
 import Producto from "./Producto";
+
+import { useLista } from "../../adminhooks/useLista";
 
 const SeccionesProducto = () => {
     // partiendo de categorias como objeto
     const categorias = {
         moda: [
-            {id: 1,  mostrar: true, categoria: 'Man & Woman Fashion', nombre: 'Sneakers', img: `https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`, precio: 50, descripcion: "lorem ipsu"},
+            {id: 1,  mostrar: true, categoria: 'Man & Woman Fashion', nombre: 'Sneakers', img: 'https://images.pexels.com/photos/267320/pexels-photo-267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', precio: 50, descripcion: "lorem ipsu"},
             {id: 2,  mostrar: true, categoria: 'Man & Woman Fashion', nombre: 'lentes', img: 'https://images.pexels.com/photos/701877/pexels-photo-701877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', precio: 50, descripcion: "lorem ipsu"},
             {id: 3,  mostrar: true, categoria: 'Man & Woman Fashion', nombre: 'joyas', img: `https://images.pexels.com/photos/1191531/pexels-photo-1191531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`, precio: 50, descripcion: "lorem ipsu"},
             
@@ -25,6 +26,9 @@ const SeccionesProducto = () => {
 
 
     }
+    const {miLista} = useLista();
+    // const lista = listaProducto;
+    
     // se extrae de categoria
     const {moda, tecnologia, deportes} = categorias;
 
