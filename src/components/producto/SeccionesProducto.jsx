@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import Articulo from "./Articulo";
+import { Link } from "react-router-dom";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from "swiper";
@@ -46,7 +47,7 @@ const SeccionesProducto = ({productos, categorias}) => {
         <Fragment>
                         
             {categorias.map( categoria => (
-                <div className="row border  w-100" key={categoria}>
+                <div className="row mt-3" key={categoria}>
                     <h2 className=" headingCategoria">{categoria}</h2>
                     <Swiper                    
                     navigation={true}
@@ -67,9 +68,12 @@ const SeccionesProducto = ({productos, categorias}) => {
                             : null))}
                         </div>                      
                     </Swiper>
-                    <div className='text-end p-1' >
-                    Ver todos...
+                    <div className=" d-flex justify-content-end mt-2">
+                        <Link to={'/'} className='btn btn-sm btn-dark mb-3 '>
+                            Ver todos...
+                        </Link> 
                     </div>
+                      
 
                 </div>
             ))}
