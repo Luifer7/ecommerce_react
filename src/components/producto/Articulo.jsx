@@ -4,8 +4,10 @@ const Articulo = ({articulo}) => {
     return (
         
             <div className=" mb-3" style={{Width: '100%'}}>
-                {/* <h2 className="card-header headingCard">{articulo.nombre}</h2> */}
-                <img className=" " style={{height: '200px'}} src={articulo.imagen} alt={articulo.nombre} />               
+                <h2 className="card-header headingCard">{articulo.nombre}</h2>
+                <Link to={`/Producto/${articulo.nombre}/${articulo.id}`} >
+                    <img className=" " style={{height: '200px'}} src={articulo.imagen} alt={articulo.nombre} /> 
+                </Link> 
 
                 <div className="card-body" style={{height: '100px'}} >
                     <p className="card-text">{articulo.comentarios.slice(0, 55)} ...</p>
