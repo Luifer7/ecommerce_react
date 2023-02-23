@@ -19,7 +19,10 @@ body {
 
 }
 /* utilidades */
-
+.w100{
+    width: 100%;
+    object-fit: contain;
+}
 .min-height-250 {
     min-height: 250px;
     

@@ -5,6 +5,7 @@ import {
 import Home from "./routes/Home";
 import Login from "./components/auth/Login";
 import NuevaCuenta from "./components/auth/NuevaCuenta";
+import Producto from "./routes/Producto"
 import Admin from "./routes/Admin";
 import Dashboard from "./admincomponents/Dashboard"
 import Perfil from "./admincomponents/Perfil"
@@ -31,6 +32,10 @@ function App() {
     {
       path: "/nueva-cuenta",
       element: <NuevaCuenta/>,
+    },
+    {
+      path: "/Producto/:articulo/:id",
+      element: <Producto/>,
     },
     {
       path: "/admin",
