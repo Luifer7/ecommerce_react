@@ -1,6 +1,6 @@
 
 import NavLogin from '../auth/NavLogin';
-import FormularioBusqueda from '../proyecto/FormularioBusqueda';
+import FormularioBusqueda from '../home/producto/FormularioBusqueda';
 
 
 

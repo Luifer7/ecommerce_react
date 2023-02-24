@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import SeccionesProducto from "../components/producto/SeccionesProducto";
+import SeccionesProducto from "../components/home/producto/SeccionesProducto";
 import { useAdmin } from '../adminhooks/useAdmin';
 import '../styles/index.css';
 
@@ -42,7 +42,7 @@ const Home  = () => {
         <Fragment>
             <Header/>
            
-           <div className="container">
+           <div className="px-4">
                 <SeccionesProducto
                     productos={productos}
                     categorias={categorias}
