@@ -2,7 +2,7 @@
 import { useState } from "react";
 import {Link} from 'react-router-dom';
 
-import '../../styles/index.css';
+// import '../../styles/index.css';
 
 const NuevaCuenta = () => {
 
@@ -41,7 +41,7 @@ const NuevaCuenta = () => {
     return (
         <div className="form-usuario">
             <div className="contenedor-form sombra-dark">
-                <h2>Obtener una Cuenta</h2>
+                <h2 className="headingForm">Obtener una Cuenta</h2>
 
                 <form 
                     onSubmit={onSubmit}

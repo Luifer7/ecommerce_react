@@ -2,6 +2,10 @@ import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
+<<<<<<< HEAD
+=======
+import Home from "./routes/Home";
+>>>>>>> a92ca36c46e96d2b4f41dee16af1eb8c6f5298dc
 import Login from "./components/auth/Login";
 import NuevaCuenta from "./components/auth/NuevaCuenta";
 import Admin from "./routes/Admin";
