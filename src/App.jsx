@@ -2,27 +2,22 @@ import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
-import Home from "./components/proyecto/Home";
 import Login from "./components/auth/Login";
 import NuevaCuenta from "./components/auth/NuevaCuenta";
 import Admin from "./routes/Admin";
 import Dashboard from "./admincomponents/Dashboard"
 import Perfil from "./admincomponents/Perfil"
-import Configuracion from "./admincomponents/Configuracion"
-import Politicas from "./admincomponents/Politicas"
 import Modulos from "./admincomponents/Modulos";
 import CreateModulo from "./admincomponents/dashboard/CreateModulo";
-import { useLista } from "./adminhooks/useLista";
 import Item from "./admincomponents/Item";
+import Producto from "./routes/Producto";
 
-function App() {
-
-  const {miLista, resuelta} = useLista()
+function App() {  
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home/>
+      element: <h1>home</h1>
     },
     {
       path: "/login",
@@ -33,33 +28,29 @@ function App() {
       element: <NuevaCuenta/>,
     },
     {
+      path: "/producto/:producto/:id",
+      element: <Producto/>,
+    },
+    {
       path: "/admin",
-      element: <Admin miLista={miLista} resuelta={resuelta} />, 
+      element: <Admin/>, 
       children: [
         {
           path: '/admin/dashboard', 
-          element: <Dashboard 
-          miLista={miLista} 
-          resuelta={resuelta} />,
+          element: <Dashboard/>,
         },
         {
-          path: '/admin/:modulo', element: <Modulos/>,
+          path: '/admin/:modulo/:icon', element: <Modulos/>,
         },
         {
           path: '/admin/createmodulo', element: <CreateModulo/>,
         },
         {
-          path: '/admin/:modulo/:item/:id', element: <Item/>,
-        },
-        {
-          path: '/admin/politicas', element: <Politicas/>,
+          path: '/admin/:modulo/:icon/:item/:id', element: <Item/>,
         },
         {
           path: '/admin/perfil', element: <Perfil/> ,
-        },
-        {
-          path: '/admin/configuracion', element: <Configuracion/> ,
-        },
+        }
       ]
     }
   
@@ -70,13 +61,8 @@ function App() {
 
       <div>
 
-          {/* Header component esta en la vista*/}
-          
-
           {/* Vista de rutas */}
-          <RouterProvider router={router} />
-  
-          {/* Footer component */}          
+          <RouterProvider router={router} />      
 
       </div>
 

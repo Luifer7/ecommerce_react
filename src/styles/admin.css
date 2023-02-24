@@ -1,8 +1,15 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
 .vistas-admin{
     min-height: 100vh;
     position: relative;
     background: linear-gradient(110deg, #0275d8 60%, #f7f7f7 60%);
+    font-family: 'Oswald', sans-serif;
+}
+.drawer {
+  position: absolute;
+  z-index: 2;
 }
 
 .oulet {
@@ -35,8 +42,34 @@
   background: #d4d4d4;
 }
 
+/** */
 
-    
+.box-table::-webkit-scrollbar {
+  width: 13px;     /* Tamaño del scroll en vertical */
+  height: 13px;    /* Tamaño del scroll en horizontal */
+  transition: 1s ease all;
+}
+.box-table::-webkit-scrollbar-thumb {
+  background: #747373;
+  border-radius: 4px;
+  transition: 1s ease all;
+}
+.box-table::-webkit-scrollbar-thumb:hover {
+  background: #0275d8;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.box-table::-webkit-scrollbar-thumb:active {
+  background-color: #0275d8;
+}
+.box-table::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+.box-table::-webkit-scrollbar-track:hover,
+.box-table::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}
+
 .page {
     position: absolute;
 

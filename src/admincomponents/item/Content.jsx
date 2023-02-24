@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
+import  { ItemContext } from "../Item";
 
-const Content = ({item, handleCheked, location, checked}) => {
-    
+const Content = () => {
+
+    const {handleCheked, item, location, checked} = useContext(ItemContext)
     const [editValues, setEditValue] = useState({})
 
     const handleSubmit = async (e) => {
@@ -25,10 +27,10 @@ const Content = ({item, handleCheked, location, checked}) => {
   
            const {id, ...newItem} = currentItem
            const editRef = doc(db, location.modulo, location.id)
-           location.item = newItem.nombre
-           Object.keys(newItem).forEach((element) => {
-               updateDoc(editRef, { [`${element}`]: newItem[element] })
+            Object.keys(newItem).forEach((element) => {
+             updateDoc(editRef, { [`${element}`]: newItem[element] })
            })
+           await handleCheked()
         }
       
       }
@@ -40,27 +42,28 @@ const Content = ({item, handleCheked, location, checked}) => {
       } 
 
     return ( 
-        <form onSubmit={handleSubmit} className="rounded py-1" 
-        style={{boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px'}}
-        >
-         
-         {
+        <form onSubmit={handleSubmit} className="rounded py-3 banner-card">
+         {  
                item.map((data, i) => (
                   <div key={i} className="px-1 mt-2 text-dark fw-bold py-1" >
                   
                   {Object.keys(data).map((name, i)=> (
                      <div key={i} 
-                     className="d-flex gap-4 align-items-center justify-content-between px-4" >
+                     className="d-flex py-1 flex-wrap align-items-center justify-content-between px-4" >
                            
                         {
-                           name === 'id' || name === 'date' ? '' 
+                           name === 'id' || name === 'date' || name === 'galeria' ? '' 
                            : <div className="d-flex fw-bold" style={{minWidth: '180px'}} >
-                              <i className="bi bi-bookmark-fill text-white"></i>
+                              {
+                                 !checked ?
+                                 <i className={`bi bi-${i}-circle text-white mx-1`} ></i>
+                                 : ''
+                              }
                               <strong className="text-white" style={{letterSpacing: '1px'}} >{name}</strong>
                               </div> 
                         }
                     
-                        {   name === 'id' || name === 'date' ? '' 
+                        {   name === 'id' || name === 'date' || name === 'galeria' ? null 
                         :   <div className="d-flex" >
                               <input onChange={handleEdit}
                               autoComplete="false"
@@ -71,7 +74,9 @@ const Content = ({item, handleCheked, location, checked}) => {
                               className={`px-1 ${checked ? 'edit-input' : 'edit-inputs_'}`} 
                               style={{minWidth: '150px'}}/>
                               {
-                                 !checked ? <i className="bi bi-pencil-fill" ></i> : ''
+                                 !checked ?
+                                    <i className={`bi bi-${i}-circle-fill text-dark mx-1`} ></i>
+                                    : ''
                               }
                              </div>
                           
@@ -84,13 +89,11 @@ const Content = ({item, handleCheked, location, checked}) => {
                ))  
          }
             {
-               !checked ?  <div className="w-100 p-0 mb-4 mt-2 px-4">
+               !checked ? <div className="w-100 p-0 mb-2 mt-2 px-4">
                   <button type="submit" className="button-30 w-100" >editar</button>
                   </div> : ''
             }
-            <div className="px-5 w-100" >
-               {/** NOTHING */}
-            </div>
+           
 
         </form>
      )

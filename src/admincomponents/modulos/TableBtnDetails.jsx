@@ -7,7 +7,7 @@ const TableBtnDetails = ({item}) => {
 
     const handleItem = (item) => {
       if (item) {
-       Navigate(`/admin/${location.modulo}/${item.nombre}/${item.id}`)        
+       Navigate(`/admin/${location.modulo}/${location.icon}/${item.nombre}/${item.id}`)        
       }
     }
    

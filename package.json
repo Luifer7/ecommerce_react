@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.8",
     "firebase": "^9.17.1",
     "localforage": "^1.10.0",
@@ -21,7 +22,8 @@
     "react-select": "^5.7.0",
     "react-transition-group": "^4.4.5",
     "sort-by": "^1.2.0",
-    "sweetalert2": "^11.7.1"
+    "sweetalert2": "^11.7.1",
+    "swiper": "^9.0.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

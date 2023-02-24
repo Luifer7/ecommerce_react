@@ -1,9 +1,9 @@
-
-import { useLista } from "../../adminhooks/useLista";
+import { useContext } from "react"
+import { DatosContext } from "../../routes/Admin"
 
 const GuardarModulo = ({preview, clearPreview}) => {
 
-const {crearModulo} = useLista()
+const {crearModulo} = useContext(DatosContext)
 
 return ( 
         <>

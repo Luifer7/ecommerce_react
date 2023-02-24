@@ -1,9 +1,10 @@
+import { useContext } from "react";
+import { DatosContext } from "../../routes/Admin";
 
-import {useLista} from '../../adminhooks/useLista'
 
 const EliminarModulo = ({modulo}) => {
 
-const {eliminarModulo} = useLista()
+const {eliminarModulo} = useContext(DatosContext)
 
 return ( 
         <>

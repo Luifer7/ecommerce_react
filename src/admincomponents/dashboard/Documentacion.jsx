@@ -18,9 +18,9 @@ return (
                     ))
                 }
                
-            </div>
+        </div>
 
-        <div className="px-1 mt-2" >
+        <div className="px-1 mt-2">
             {
             resuelta 
             ? miLista.map((lista, i)=> (
@@ -31,29 +31,33 @@ return (
                     <p className="text-dark">
                     <i>{lista.descripcion}</i>
                     </p>
-                    <table className="table table-striped table-hover">
-                <thead>
-                    <tr className="text-center" >
-                    {lista.head.map((head, i)=> (
-                        <th key={i} > {head.nombre}</th>
-                        ))
-                    }
-                    <th>acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr className="text-center" >
-                    {lista.body.map((body, i)=> (
-                        <td style={{maxWidth: '100px', fontSize: '15px'}} key={i}> {body}</td>
-                        ))
-                    }
-                    <td className="d-flex gap-3 justify-content-center align-items-center" >
-                    <button disabled className="btn btn-outline-info btn-sm" >detalles</button>
-                    </td>
-                   
-                    </tr>
-                </tbody>
-            </table>
+
+                    <div className="box-table" style={{overflow: 'auto'}} >
+                        <table className="table table-striped table-hover">
+                        <thead>
+                        <tr className="text-center" >
+                        {lista.head.map((head, i)=> (
+                            <th key={i} > {head.nombre}</th>
+                            ))
+                        }
+                        <th>acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr className="text-center" >
+                            {lista.body.map((body, i)=> (
+                                <td style={{maxWidth: '100px', fontSize: '15px'}} key={i}> {body}</td>
+                                ))
+                            }
+                            <td className="d-flex gap-3 justify-content-center align-items-center" >
+                            <button disabled className="btn btn-outline-info btn-sm" >detalles</button>
+                            </td>
+                        
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+
                  </div>
             ))
             :  <div className="w-100 text-center"><Spinner/></div> 

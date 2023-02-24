@@ -3,46 +3,65 @@ import {useRef, useState } from 'react'
 import "../../styles/animaciones.css"
 import { useCrud } from '../../adminhooks/useCrud'
 import { useParams } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
-const FormAdd = ({head, show, selectOptions, nombreModulo}) => {
+const FormAdd = ({head, show, selectOptions, nombreModulo, closeForm}) => {
 
 const location = useParams()
-
 const {create} = useCrud(location)
+
 const nodeRef = useRef(null)
 const [nuevoDato, setNuevoDato] = useState({})
 
 const handledSubmit = (e) => {
     e.preventDefault()
-
+    closeForm()
     let newData = {}
     newData = nuevoDato
     newData.date = Date.now()
 
     if (nombreModulo === 'categorias') { 
       newData.categoria_productos = 0
-      return create(newData)   
+      validImg(newData)
     }
 
-    if (nombreModulo === 'usuarios') {
-      newData.rol = 'cliente'
-      create(newData)
-    }
 
     if (nombreModulo === 'productos') { 
+
       if (!newData.producto_categoria) {
           newData.producto_categoria = 'undefined' 
-          return create(newData)       
+          return validImg(newData)
       }
-        create(newData)
+
+       validImg(newData)
+       
     }
    
-   
-}   
+}  
+
 const handledChange = e => {
     setNuevoDato({ 
         ...nuevoDato, [e.target.name] : e.target.value
     })
+}
+
+const validImg = (itemObject) => {
+  if (itemObject.imagen.match(/^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/)) {
+    return create(itemObject)
+  } else {
+  Swal.fire({
+    icon: 'info', 
+    text: 'el formato de URL de imagen deser de la siguiente forma: https://ejemplo.jpg o  https://ejemplo.jpg.png',
+    showDenyButton: true, denyButtonText: 'intentar de nuevo', confirmButtonText: 'continuar y editar luego'
+  }).then((r)=> {
+    if (r.isConfirmed) {
+      return create(itemObject)
+    }
+    if (r.isDenied) {
+      return 
+    }
+  })
+}
 }
 
 return ( 
@@ -65,8 +84,7 @@ return (
               <div 
               key={i} className="px-2 mb-2" >
               
-              {item.tipo === 'hidden' ? '' : 
-              <label htmlFor={item.nombre}>
+              {item.tipo === 'hidden' ? '' : <label htmlFor={item.nombre}>
                 <strong>{item.nombre}</strong>
                 {item.requerido ? <i style={{fontSize: '12px'}} className='mx-2' >requerido*</i> : ''}
               </label> }
@@ -83,6 +101,7 @@ return (
               
               :  
               <div>
+               
               <input 
               id={item.nombre}
               readOnly={!item.editable}
@@ -92,13 +111,11 @@ return (
               name={item.nombre}
               onChange={handledChange}
               required
-              pattern={item.pattern}
               />
               </div>
               
               }
-              
-           
+
             </div>
 
               )) 
@@ -111,7 +128,7 @@ return (
         </form>
         : ''
         }
-    
+
     </div>
 
     </CSSTransition>

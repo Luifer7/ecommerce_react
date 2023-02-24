@@ -9,7 +9,7 @@ const HeadTable = ({headDataModule, params}) => {
             headDataModule.map((item, i)=> (
                item.tipo === 'hidden' 
                ? '' 
-               : <th key={i} className="align-end" >{item.nombre}</th>
+               :  <th key={i} className="align-end">{item.nombre}</th>
             ))
            }
                  <th>Acciones</th> 

@@ -1,13 +1,20 @@
 
+import { useContext } from "react"
 import { NavLink } from "react-router-dom"
+import { DatosContext } from "../routes/Admin"
 import Documentacion from "./dashboard/Documentacion"
 
-const Dashboard = ({miLista, resuelta}) => {
+const Dashboard = () => {
+
+const {miLista, resuelta} = useContext(DatosContext)
 
 return ( 
         
-        <div className="px-3 mt-2" >
+        <div className="px-3 mt-3" >
             
+            <div className="mt-3 w-100 text-center" >
+                       <strong className="opacity-0" >espacio invisible</strong>
+            </div>  
          
             {/**PRESENTACION CARTA */}
             <div className="col-12 rounded  mt-3 p-3 d-flex justify-content-between flex-wrap" 

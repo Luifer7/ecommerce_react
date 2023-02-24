@@ -1,7 +1,12 @@
+
+import { useContext } from "react"
 import { NavLink } from "react-router-dom"
+import { DatosContext } from "../routes/Admin"
 import Spinner from "./dashboard/Spinner"
 
-const AdminSidebar = ({miLista, resuelta}) => {
+const AdminSidebar = () => {
+
+const {miLista, resuelta} = useContext(DatosContext)
 
 let activeStyle = {
   transition: '.6s ease all', 
@@ -36,7 +41,7 @@ return (
                 <NavLink
                 key={i}
                 className="nav-link active fw-bold"
-                to={`/admin/${r.value}`}
+                to={`/admin/${r.value}/${r.icon}`}
                 style={({ isActive }) =>
                 isActive ? activeStyle : undefined}
                 >
@@ -48,42 +53,19 @@ return (
               }
             
           </div>
+            
           <hr/>
           
           { /**LINKS RUTA CONFIGURACION, PERFIL Y CERRAR */ }
-          <div className="dropdown"  style={{curso: 'pointer'}}>
-          <a  className="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+          <div className="dropdown">
+          <a className="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
                   id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6fhtU5sGYJUNXDTvAwle4LAyKAacC_SdsQOVj-LzxGA&s"
                alt="" width="32" height="32" className="rounded-circle me-2"/>
-              <strong>usuario</strong>
+              <strong style={{curso: 'pointer'}} >usuario</strong>
           </a>
           <ul className="dropdown-menu text-medium shadow" aria-labelledby="dropdownUser2">
-
-          <li>
-              <NavLink 
-              className="nav-link active fw-bold"
-              to={'/admin/politicas'}
-              style={({ isActive }) =>
-              isActive ? activeStyle : undefined}
-              >
-              <i className="bi bi-file-earmark-text m-1"></i>
-              <strong>Politicas</strong>
-              </NavLink>
-              </li>
-              
-              <li className="mb-2" >
-              <NavLink 
-                className="nav-link active"
-                to={'/admin/configuracion'}
-                style={({ isActive }) =>
-                isActive ? activeStyle : undefined}
-                >
-                <i className="bi bi-gear-fill m-1"></i>
-                <strong>Configuracion</strong>
-                </NavLink>
-              </li>
-              
+      
               <li className="mb-2" >
               <NavLink 
                 className="nav-link active"
@@ -97,7 +79,7 @@ return (
               </li>
               
               <li><hr className="dropdown-divider"/></li>
-              <li><span className="dropdown-item fw-bold text-danger">Cerrar cesion</span></li>
+              <li style={{cursor: 'pointer'}} ><span className="dropdown-item fw-bold text-danger">Cerrar cesion</span></li>
           </ul>
           </div>
   
