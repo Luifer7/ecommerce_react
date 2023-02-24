@@ -13,12 +13,12 @@ import CreateModulo from "./admincomponents/dashboard/CreateModulo";
 import Item from "./admincomponents/Item";
 import Producto from "./routes/Producto";
 
-function App() {  
+function App() {
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <h1>home</h1>
+      element: <Home/>
     },
     {
       path: "/login",
@@ -54,7 +54,6 @@ function App() {
         }
       ]
     }
-  
   ])
 
   

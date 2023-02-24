@@ -8,7 +8,7 @@ import 'swiper/css';
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const SeccionesProducto = ({productos, categorias}) => {
+const SeccionesProducto = ({bodyDataModule, dataCategories}) => {
 
     const getWidth = () => window.innerWidth || document.documentElement.clientWidth 
     || document.body.clientWidth;
@@ -46,9 +46,9 @@ const SeccionesProducto = ({productos, categorias}) => {
     return ( 
         <Fragment>
                         
-            {categorias.map( categoria => (
-                <div className="row mt-3" key={categoria}>
-                    <h2 className=" headingCategoria">{categoria}</h2>
+            {dataCategories.map( (categoria, i) => (
+                <div key={i} className="row mt-3">
+                    <h2 className=" headingCategoria">{categoria.nombre}</h2>
                     <Swiper                    
                     navigation={true}
                     pagination={true} 
@@ -59,10 +59,10 @@ const SeccionesProducto = ({productos, categorias}) => {
                     // onSwiper={(swiper) => console.log(swiper)}
                     >       
                         <div className=" mt-3">
-                            {productos.map( articulo => ( articulo.producto_categoria === categoria
+                            {bodyDataModule.map( articulo => ( articulo.producto_categoria === categoria.nombre
                             ?<SwiperSlide key={articulo.id}>
                                 <Articulo                                        
-                                        articulo={articulo}
+                                articulo={articulo}
                                 />
                             </SwiperSlide>
                             : null))}

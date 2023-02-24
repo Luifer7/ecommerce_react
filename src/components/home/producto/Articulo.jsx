@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 const Articulo = ({articulo}) => {
     return (
-        
             <div className="card mb-3" style={{Width: '100%', height: '100%'}}>
                 <h2 className="card-header headingCard">{articulo.nombre}</h2>
                 <div className="d-flex justify-content-center">
@@ -25,8 +24,7 @@ const Articulo = ({articulo}) => {
 
                 </div>
             </div>
-        
-    );
+    )
 }
  
 export default Articulo;

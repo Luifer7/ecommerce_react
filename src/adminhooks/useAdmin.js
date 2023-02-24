@@ -24,7 +24,7 @@ export function useAdmin (modulo) {
         data.push({...doc.data()})
     })
         setDataCategories(data)
-       
+        console.log(data)
     }
 
     //Obtener datos para la pagina modulo
@@ -80,7 +80,15 @@ export function useAdmin (modulo) {
 
 
     return {
-        nombreModulo, dataCategories, bodyDataModule, headDataModule, isResolve, showForm, closeForm, head, show
+        nombreModulo, 
+        dataCategories,
+         bodyDataModule,
+          headDataModule, 
+          isResolve, 
+          showForm, 
+          closeForm,
+           head, 
+           show
     }
 
 }

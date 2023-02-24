@@ -4,49 +4,31 @@ import Footer from '../components/layout/Footer';
 import SeccionesProducto from "../components/home/producto/SeccionesProducto";
 import { useAdmin } from '../adminhooks/useAdmin';
 import '../styles/index.css';
+import Spinner from '../admincomponents/dashboard/Spinner';
 
 
 const Home  = () => {
 
-    // state del componente
-    const [productos, guardaProductos] = useState([]);
-    const [ categorias, guardarCategorias] = useState([]);
 
     // trae los productos del custom hook 
-    const {bodyDataModule} = useAdmin('productos');
+    const {bodyDataModule, dataCategories, isResolve} = useAdmin('productos');
     
-    useEffect(() =>{
-    if(!bodyDataModule) return <h1>Error en los productos</h1>;
-        // en caso de existir hace disponibles los productos        
-        try {
-            const productos = bodyDataModule;
-            let categorias = []
 
-            // agrega las categorias
-            for(let i= 0; i < productos.length; i++ ){                
-                if(!categorias.includes(productos[i].producto_categoria)){
-                    categorias.push(productos[i].producto_categoria)
-                }
-            }
-            // pasa los productos y las categorias
-            guardarCategorias(categorias);
-            guardaProductos(productos);
-
-        } catch (error) {
-            console.log('hubo un error con los productos' + error);
-        }
-
-    }, [bodyDataModule]);
     
     return ( 
         <Fragment>
             <Header/>
-           
+         
            <div className="px-4">
-                <SeccionesProducto
-                    productos={productos}
-                    categorias={categorias}
-                />
+              
+           {isResolve 
+           ?  <SeccionesProducto
+           bodyDataModule={bodyDataModule}
+           dataCategories={dataCategories}
+            />
+            : <div className='text-center p-5 mb-3 mt-3' ><Spinner/></div>
+            }
+               
            </div>
            
            <Footer/>
